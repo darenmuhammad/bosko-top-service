@@ -5,7 +5,7 @@ const navbar = document.querySelector('.navbar');
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-}
+};
 
 // 3. scroll section active link
 const sections = document.querySelectorAll('section');
@@ -29,7 +29,7 @@ window.onscroll = () => {
     // 1. stciky navbar
     const header = document.querySelector('.header');
 
-    header.classList.toggle('sticky', window.scrollY > 100);
+    header.classList.toggle('sticky', window.scrollY > 50);
 
     // 5. remove menu icon navbar when click navbar link (scroll)
     menuIcon.classList.remove('bx-x');
@@ -59,7 +59,7 @@ const darkModeIcon = document.querySelector('#darkMode-icon');
 darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('bx-sun');
     document.body.classList.toggle('dark-mode');
-}
+};
 
 // 7.scroll reveal
 ScrollReveal({
@@ -71,7 +71,7 @@ ScrollReveal({
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 
-ScrollReveal().reveal('.category-box, .testimony-wrapper', { origin: 'bottom' });
+ScrollReveal().reveal('.category-box, .profile-card, .testimony-wrapper', { origin: 'bottom' });
 
 ScrollReveal().reveal('.about-img, .recruitment-content, .contact-content, .home-content h1', { origin: 'left' });
 
