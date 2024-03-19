@@ -125,7 +125,8 @@ body {
     transform: scale(.9);
 }
 
-.navbar a {
+.navbar a,
+.navbar p {
     position: relative;
     font-size: 1.5rem;
     color: var(--text-color);
@@ -133,8 +134,9 @@ body {
     margin-right: 2rem;
 }
 
-.navbar .dropdown a {
-    margin-right: .5rem;
+.navbar .dropdown p,
+.navbar .dropdown i {
+    margin-right: 1rem;
 }
 
 .navbar .dropdown {
@@ -539,10 +541,6 @@ ul {
     text-align: justify;
 }
 
-.description-box table tbody tr td:nth-child(3) {
-    text-align: left;
-}
-
 .detail-button {
     display: flex;
     justify-content: flex-end;
@@ -562,7 +560,7 @@ ul {
 }
 
 .exit-btn:hover {
-    border: 1px solid var(--text-color);
+    box-shadow: 0 0 2px var(--text-color);
 }
 
 .recruitment {
@@ -732,7 +730,7 @@ ul {
 }
 
 .working-time tbody tr td:nth-child(3) {
-    text-align: center;
+    text-align: left;
 }
 
 .contact-content .social-media a {
