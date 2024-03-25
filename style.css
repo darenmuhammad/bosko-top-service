@@ -14,6 +14,7 @@
 
 :root {
     --bg-color: #ffffff;
+    --nav-bg-color: rgb(255, 255, 255, .5);
     --text-color: #333;
     --main-color: #54C4CF;
     --white-color: #fdfdfd;
@@ -24,6 +25,7 @@
 
 .dark-mode {
     --bg-color: #1f242d;
+    --nav-bg-color: rgb(31, 36, 45, .5);
     --text-color: #fdfdfd;
     --shadow-color: rgba(0, 0, 0, .7);
     --bullet-color: rgba(0, 0, 0, 1);
@@ -89,35 +91,39 @@ body {
 
 /* Style the dropdown menu */
 .navbar ul ul {
+    width: 120px;
     position: absolute;
     top: 70%;
     display: none;
     text-align: center;
     margin-top: -.4rem;
+    margin-left: .5rem;
+    padding: 0 1rem;
+    border-radius: 0 0 .5rem .5rem;
+    padding-top: 1.2rem;
+    background: linear-gradient(var(--nav-bg-color), rgb(84, 196, 207, .5));
+    backdrop-filter: blur(3px);
 }
 
 .navbar ul ul li {
-    display: block;
     width: 100%;
     background: var(--bg-color);
     box-shadow: 0 .1rem .5rem var(--shadow-color);
     border-radius: .5rem;
-    margin: .5rem 0;
+    margin: .7rem 0;
     transition: .4s ease;
 }
 
 .navbar ul ul li a {
     display: block;
     width: 100%;
+    margin: 0;
     padding: .5rem 0;
     border-radius: .5rem;
 }
 
 .navbar li:hover ul {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    border-radius: .5rem;
+    display: block;
 }
 
 /* Change the background color of dropdown links on hover */
@@ -131,7 +137,12 @@ body {
     font-size: 1.5rem;
     color: var(--text-color);
     font-weight: 500;
-    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.navbar p,
+.navbar i {
+    cursor: pointer;
 }
 
 .navbar .dropdown p,
@@ -367,22 +378,22 @@ ul {
     color: var(--main-color);
 }
 
-.team {
+.group {
     padding-bottom: 10rem;
     background: var(--bg-color);
     transition: .5s ease;
 }
 
-.team.active {
+.group.active {
     filter: blur(5px);
     pointer-events: none;
 }
 
-.team h2 {
+.group h2 {
     margin-bottom: 4rem;
 }
 
-.team-container {
+.group-container {
     position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -390,7 +401,7 @@ ul {
     gap: 3rem 0;
 }
 
-.team-container .profile-card {
+.group-container .profile-card {
     position: relative;
     width: 237px;
     height: 237px;
@@ -473,9 +484,9 @@ ul {
     border-radius: 2rem;
     box-shadow: 0 .1rem .5rem var(--shadow-color);
     position: absolute;
-    top: 60%;
+    top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(.9);
+    transform: translate(-50%, -60%) scale(.9);
     width: 80%;
     overflow: hidden;
     background: var(--bg-color);
@@ -506,7 +517,7 @@ ul {
 
 .detail-description {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
     margin: 2rem;
     flex-wrap: wrap;
     align-items: center;
@@ -519,8 +530,9 @@ ul {
     border-radius: 2rem;
     text-align: center;
     border: .2rem solid var(--bg-color);
-    width: 32rem;
-    min-height: 30rem;
+    /* width: 32rem; */
+    flex: 1 1 30rem;
+    min-height: 27rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -804,7 +816,7 @@ ul {
     top: 50%;
     left: 5px;
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: var(--border-color);
     font-weight: 500;
     pointer-events: none;
     transform: translateY(-50%);
@@ -814,6 +826,7 @@ ul {
 .input-box input:focus~label,
 .input-box input:valid~label,
 .input-box input:disabled~label {
+    color: var(--text-color);
     top: -5px;
 }
 
@@ -856,13 +869,12 @@ ul {
 }
 
 .form-btn {
-    width: 100%;
     height: 45px;
     background: var(--text-color);
     border-radius: 6px;
-    border: none;
-    outline: none;
     cursor: pointer;
+    padding: .5rem 1.8rem;
+    letter-spacing: .1rem;
     color: var(--bg-color);
     font-size: 1.4rem;
     font-weight: 600;
@@ -871,6 +883,10 @@ ul {
 
 .form-btn:hover {
     box-shadow: 0 0 .5rem var(--text-color);
+}
+
+.form-btn.full {
+    width: 100%;
 }
 
 .form-register {
@@ -917,22 +933,51 @@ ul {
 }
 
 .input-box select {
-    width: 92%;
-    top: 50%;
+    position: absolute;
+    width: 91%;
+    height: 70%;
+    top: 55%;
     left: 5px;
+    border: none;
+    outline: none;
     font-size: 1.2rem;
+    background: var(--bg-color);
     color: var(--text-color);
     font-weight: 600;
-    transform: translateY(90%);
-    background: var(--bg-color);
+    transform: translateY(-50%);
 }
 
+.input-box select:focus~label,
 .input-box select:valid~label {
+    color: var(--text-color);
     top: -5px;
 }
 
-.form-btn.contract-btn {
-    width: 35%;
+.button-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.cancel-btn {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1.8rem;
+    height: 45px;
+    background: var(--bg-color);
+    border-radius: 6px;
+    border: 2px solid var(--border-color);
+    font-size: 1.4rem;
+    color: var(--text-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.cancel-btn:hover {
+    transform: scale(.9);
+    box-shadow: 0 0 .5rem var(--border-color);
 }
 
 .footer {
@@ -986,14 +1031,13 @@ ul {
         font-size: 55%;
     }
 
-    .team-container {
+    .group-container {
         grid-template-columns: repeat(3, 1fr);
         gap: 2.5rem;
     }
 
     .input-box select {
         width: 90%;
-        transform: translateY(110%);
     }
 }
 
@@ -1058,7 +1102,7 @@ ul {
 
     .navbar ul ul {
         position: relative;
-        width: 15%;
+        width: 14%;
     }
 
     .navbar ul li {
@@ -1120,7 +1164,7 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .team-container {
+    .group-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
@@ -1210,22 +1254,26 @@ ul {
         margin-top: 5rem;
     }
 
-    .navbar ul ul li {
-        width: 150%;
+    .navbar ul ul {
+        width: 100px;
     }
 
-    .team-container {
+    .group-container {
         grid-template-columns: repeat(1, 1fr);
         gap: 3rem 0;
     }
 
     .detail-outline {
-        top: 110%;
+        top: 122%;
         width: 90%;
     }
 
     .detail-image img {
         width: 30vw;
+    }
+
+    .input-box select {
+        width: 90%;
     }
 
     .testimony-slide p {
@@ -1245,13 +1293,12 @@ ul {
     }
 
     .detail-outline {
-        padding: 2rem 1rem;
-        width: 95%;
+        padding: 2rem .5rem;
+        width: 92%;
     }
 
-    .description-box {
-        padding: 2rem;
-        width: 32rem;
+    .input-box select {
+        width: 86%;
     }
 
     .recruitment .recruitment-container,

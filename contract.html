@@ -55,7 +55,7 @@
     <section class="form">
         <div class="form-wrapper contract">
             <div class="form-box">
-                <h2><span>Contract</span> Form</h2>
+                <h2>Contract</h2>
                 <form action="category.html">
                     <div class="flex">
                         <div class="left">
@@ -77,14 +77,14 @@
                                 <span class="icon">
                                     <i class='bx bxs-phone'></i>
                                 </span>
-                                <input type="text" required>
+                                <input type="text" value="0813-1234-5678" disabled>
                                 <label>Telephone Number</label>
                             </div>
                             <div class="input-box">
                                 <span class="icon">
                                     <i class='bx bxs-home'></i>
                                 </span>
-                                <input type="text" required>
+                                <input type="text" value="Your Address" disabled>
                                 <label>Address</label>
                             </div>
                         </div>
@@ -94,8 +94,8 @@
                                 <span class="icon">
                                     <i class='bx bxs-user-detail'></i>
                                 </span>
-                                <input type="text" value="Kucing Sumbul" disabled>
-                                <label>Assistance's Name</label>
+                                <input type="text" value="Assistant's Full Name" disabled>
+                                <label>Assistant's Name</label>
                             </div>
                             <div class="input-box">
                                 <span class="icon">
@@ -108,7 +108,8 @@
                                 <span class="icon">
                                     <i class='bx bxs-time'></i>
                                 </span>
-                                <select name="" id="">
+                                <select name="" id="" required>
+                                    <option value=""></option>
                                     <option value="">6 Month</option>
                                     <option value="">12 Month</option>
                                 </select>
@@ -116,7 +117,10 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="form-btn contract-btn">Contract</button>
+                    <div class="button-wrap">
+                        <a href="category.html" class="cancel-btn">Cancel</a>
+                        <button type="submit" class="form-btn">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
